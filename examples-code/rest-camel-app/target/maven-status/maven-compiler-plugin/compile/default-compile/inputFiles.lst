@@ -1,0 +1,8 @@
+D:\Development\immersion\apache-camel-immersion\examples-code\rest-camel-app\src\main\java\org\camel\app\CamelSpringBootApplication.java
+D:\Development\immersion\apache-camel-immersion\examples-code\rest-camel-app\src\main\java\org\camel\app\config\RestConfigRouter.java
+D:\Development\immersion\apache-camel-immersion\examples-code\rest-camel-app\src\main\java\org\camel\app\bean\MovieBean.java
+D:\Development\immersion\apache-camel-immersion\examples-code\rest-camel-app\src\main\java\org\camel\app\router\rest\MovieRestRouter.java
+D:\Development\immersion\apache-camel-immersion\examples-code\rest-camel-app\src\main\java\org\camel\app\model\Movie.java
+D:\Development\immersion\apache-camel-immersion\examples-code\rest-camel-app\src\main\java\org\camel\app\router\internal\MongoDBInternalRouter.java
+D:\Development\immersion\apache-camel-immersion\examples-code\rest-camel-app\src\main\java\org\camel\app\router\internal\MovieInternalRouter.java
+D:\Development\immersion\apache-camel-immersion\examples-code\rest-camel-app\src\main\java\org\camel\app\config\MongoDBConfig.java

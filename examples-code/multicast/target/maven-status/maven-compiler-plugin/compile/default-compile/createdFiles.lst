@@ -1,0 +1,4 @@
+org\camel\examples\bean\MySpringBean.class
+org\camel\examples\route\BaseRouter.class
+org\camel\examples\CamelSpringBootApplication.class
+org\camel\examples\route\MulticastRouter.class
