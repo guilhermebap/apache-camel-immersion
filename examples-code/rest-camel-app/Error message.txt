@@ -1,0 +1,388 @@
+2022-05-11 20:55:20.621  INFO 4560 --- [           main] o.camel.app.CamelSpringBootApplication   : Starting CamelSpringBootApplication using Java 11.0.15 on Gui-Desktop with PID 4560 (D:\Development\immersion\apache-camel-immersion\examples-code\rest-camel-app\target\classes started by guilh in D:\Development\immersion\apache-camel-immersion\examples-code\rest-camel-app)
+2022-05-11 20:55:20.627  INFO 4560 --- [           main] o.camel.app.CamelSpringBootApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-11 20:55:23.132  WARN 4560 --- [           main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-05-11 20:55:23.169  INFO 4560 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2022-05-11 20:55:23.169  INFO 4560 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2476 ms
+2022-05-11 20:55:24.212  INFO 4560 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[0.0.0.0:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-05-11 20:55:24.350  INFO 4560 --- [}-0.0.0.0:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:19}] to 0.0.0.0:27017
+2022-05-11 20:55:24.352  INFO 4560 --- [}-0.0.0.0:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:18}] to 0.0.0.0:27017
+2022-05-11 20:55:24.352  INFO 4560 --- [}-0.0.0.0:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=0.0.0.0:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=56836100}
+2022-05-11 20:55:25.324  INFO 4560 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2022-05-11 20:55:25.414  INFO 4560 --- [           main] io.undertow                              : starting server: Undertow - 2.2.16.Final
+2022-05-11 20:55:25.429  INFO 4560 --- [           main] org.xnio                                 : XNIO version 3.8.6.Final
+2022-05-11 20:55:25.445  INFO 4560 --- [           main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.6.Final
+2022-05-11 20:55:25.576  INFO 4560 --- [           main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
+2022-05-11 20:55:25.641  INFO 4560 --- [           main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 8080 (http)
+2022-05-11 20:55:26.096  INFO 4560 --- [           main] .c.i.e.DefaultAutowiredLifecycleStrategy : Autowired property: mongoConnection on component: mongodb as exactly one instance of type: com.mongodb.client.MongoClient (com.mongodb.client.internal.MongoClientImpl) found in the registry
+2022-05-11 20:55:26.260  INFO 4560 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (MyCamel) is starting
+2022-05-11 20:55:26.267  INFO 4560 --- [           main] o.a.c.component.mongodb.MongoDbEndpoint  : Initialising MongoDb endpoint: mongodb://connectionBean?collection=movies&database=api&operation=insert
+2022-05-11 20:55:26.295  INFO 4560 --- [           main] o.a.c.component.mongodb.MongoDbEndpoint  : Initialising MongoDb endpoint: mongodb://connectionBean?collection=movies&database=api&operation=findAll
+2022-05-11 20:55:26.296  INFO 4560 --- [           main] o.a.c.component.mongodb.MongoDbEndpoint  : Initialising MongoDb endpoint: mongodb://connectionBean?collection=movies&database=api&operation=findAll
+2022-05-11 20:55:26.319  INFO 4560 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Routes startup (total:9 started:9)
+2022-05-11 20:55:26.319  INFO 4560 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started direct-mongodb-movie-insert-id (direct://mongodb-movie-insert)
+2022-05-11 20:55:26.319  INFO 4560 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started direct-mongodb-movie-findAll-id (direct://mongodb-movie-findAll)
+2022-05-11 20:55:26.320  INFO 4560 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started direct-mongodb-movie-findByGender-id (direct://mongodb-movie-findByGender)
+2022-05-11 20:55:26.320  INFO 4560 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started direct-save-movie-id (direct://save-movie)
+2022-05-11 20:55:26.320  INFO 4560 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started direct-findAll-movies-id (direct://findAll-movies)
+2022-05-11 20:55:26.321  INFO 4560 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started direct-findByGender-movies-id (direct://findByGender-movies)
+2022-05-11 20:55:26.321  INFO 4560 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started rest-movies-findAll-id (rest://get:/movies:/findAll)
+2022-05-11 20:55:26.322  INFO 4560 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started rest-movies-findByGender-id (rest://get:/movies:/findByGender)
+2022-05-11 20:55:26.323  INFO 4560 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started rest-movies-save-id (rest://post:/movies:/save)
+2022-05-11 20:55:26.324  INFO 4560 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (MyCamel) started in 637ms (build:90ms init:483ms start:64ms)
+2022-05-11 20:55:26.349  INFO 4560 --- [           main] o.camel.app.CamelSpringBootApplication   : Started CamelSpringBootApplication in 6.336 seconds (JVM running for 19.926)
+2022-05-11 20:55:41.394  INFO 4560 --- [  XNIO-1 task-1] o.a.c.c.s.CamelHttpTransportServlet      : Initialized CamelHttpTransportServlet[name=CamelServlet, contextPath=]
+2022-05-11 20:55:41.427  INFO 4560 --- [  XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-11 20:55:41.427  INFO 4560 --- [  XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-11 20:55:41.429  INFO 4560 --- [  XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-11 20:55:41.652 ERROR 4560 --- [  XNIO-1 task-1] io.undertow.request                      : UT005023: Exception handling request to /error
+
+java.lang.RuntimeException: org.springframework.web.util.NestedServletException: Handler dispatch failed; nested exception is java.io.IOError: java.io.FileNotFoundException: Invalid file path
+	at io.undertow.servlet.spec.HttpServletResponseImpl.doErrorDispatch(HttpServletResponseImpl.java:167) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:282) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:79) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:134) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:131) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:255) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:79) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:100) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:387) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:852) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1423) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1280) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: org.springframework.web.util.NestedServletException: Handler dispatch failed; nested exception is java.io.IOError: java.io.FileNotFoundException: Invalid file path
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1082) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:497) ~[jakarta.servlet-api-4.0.4.jar:4.0.4]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:584) ~[jakarta.servlet-api-4.0.4.jar:4.0.4]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.16.jar:5.3.16]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.16.jar:5.3.16]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:257) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchToPath(ServletInitialHandler.java:182) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:504) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:417) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.HttpServletResponseImpl.doErrorDispatch(HttpServletResponseImpl.java:165) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	... 17 common frames omitted
+Caused by: java.io.IOError: java.io.FileNotFoundException: Invalid file path
+	at org.xnio.channels.Channels$4.run(Channels.java:1103) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at org.xnio.channels.Channels$4.run(Channels.java:1093) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at java.base/java.security.AccessController.doPrivileged(Native Method) ~[na:na]
+	at org.xnio.channels.Channels.<clinit>(Channels.java:1093) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at io.undertow.servlet.spec.ServletOutputStreamImpl.flushInternal(ServletOutputStreamImpl.java:504) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.ServletOutputStreamImpl.flush(ServletOutputStreamImpl.java:478) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at java.base/java.io.FilterOutputStream.flush(FilterOutputStream.java:153) ~[na:na]
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1187) ~[jackson-core-2.13.1.jar:2.13.1]
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1009) ~[jackson-databind-2.13.1.jar:2.13.1]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:456) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:290) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:135) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	... 47 common frames omitted
+Caused by: java.io.FileNotFoundException: Invalid file path
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:231) ~[na:na]
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:126) ~[na:na]
+	at org.xnio.channels.Channels$4.run(Channels.java:1098) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	... 65 common frames omitted
+
+2022-05-11 20:55:41.656 ERROR 4560 --- [  XNIO-1 task-1] io.undertow.request                      : UT005071: Undertow request failed HttpServerExchange{ GET /error}
+
+java.lang.NoClassDefFoundError: Could not initialize class org.xnio.channels.Channels
+	at io.undertow.servlet.spec.ServletOutputStreamImpl.close(ServletOutputStreamImpl.java:628) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.HttpServletResponseImpl.closeStreamAndWriter(HttpServletResponseImpl.java:498) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.HttpServletResponseImpl.responseDone(HttpServletResponseImpl.java:587) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:334) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:79) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:134) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:131) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:255) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:79) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:100) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:387) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:852) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1423) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1280) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2022-05-11 20:55:41.672 ERROR 4560 --- [  XNIO-1 task-1] io.undertow.request.io                   : UT005090: Unexpected failure
+
+java.lang.NoClassDefFoundError: Could not initialize class org.xnio.channels.Channels
+	at io.undertow.servlet.spec.ServletInputStreamImpl.readIntoBuffer(ServletInputStreamImpl.java:201) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.ServletInputStreamImpl.close(ServletInputStreamImpl.java:266) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.HttpServletRequestImpl.closeAndDrainRequest(HttpServletRequestImpl.java:707) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.core.ServletBlockingHttpExchange.close(ServletBlockingHttpExchange.java:89) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1700) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:427) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:852) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1423) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1280) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2022-05-11 20:55:41.673 ERROR 4560 --- [  XNIO-1 task-1] io.undertow.request.io                   : UT005090: Unexpected failure
+
+java.lang.NoClassDefFoundError: Could not initialize class org.xnio.channels.Channels
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1722) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:427) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:852) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1423) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1280) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2022-05-11 20:55:49.067 ERROR 4560 --- [  XNIO-1 task-1] io.undertow.request                      : UT005023: Exception handling request to /api/v1/movies/save
+
+java.lang.NoClassDefFoundError: Could not initialize class org.xnio.channels.Channels
+	at io.undertow.servlet.spec.ServletInputStreamImpl.readIntoBuffer(ServletInputStreamImpl.java:201) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.ServletInputStreamImpl.read(ServletInputStreamImpl.java:177) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.ServletInputStreamImpl.read(ServletInputStreamImpl.java:163) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at org.apache.camel.util.IOHelper.copy(IOHelper.java:214) ~[camel-util-3.16.0.jar:3.16.0]
+	at org.apache.camel.util.IOHelper.copy(IOHelper.java:161) ~[camel-util-3.16.0.jar:3.16.0]
+	at org.apache.camel.util.IOHelper.copy(IOHelper.java:156) ~[camel-util-3.16.0.jar:3.16.0]
+	at org.apache.camel.util.IOHelper.copy(IOHelper.java:152) ~[camel-util-3.16.0.jar:3.16.0]
+	at org.apache.camel.http.common.HttpHelper.cacheResponseBodyFromInputStream(HttpHelper.java:169) ~[camel-http-common-3.16.0.jar:3.16.0]
+	at org.apache.camel.http.common.HttpHelper.readRequestBodyFromServletRequest(HttpHelper.java:147) ~[camel-http-common-3.16.0.jar:3.16.0]
+	at org.apache.camel.http.common.DefaultHttpBinding.parseBody(DefaultHttpBinding.java:646) ~[camel-http-common-3.16.0.jar:3.16.0]
+	at org.apache.camel.http.common.HttpMessage.createBody(HttpMessage.java:101) ~[camel-http-common-3.16.0.jar:3.16.0]
+	at org.apache.camel.support.MessageSupport.getBody(MessageSupport.java:65) ~[camel-support-3.16.0.jar:3.16.0]
+	at org.apache.camel.http.common.DefaultHttpBinding.readBody(DefaultHttpBinding.java:193) ~[camel-http-common-3.16.0.jar:3.16.0]
+	at org.apache.camel.http.common.DefaultHttpBinding.readRequest(DefaultHttpBinding.java:118) ~[camel-http-common-3.16.0.jar:3.16.0]
+	at org.apache.camel.http.common.HttpMessage.init(HttpMessage.java:73) ~[camel-http-common-3.16.0.jar:3.16.0]
+	at org.apache.camel.http.common.HttpMessage.<init>(HttpMessage.java:39) ~[camel-http-common-3.16.0.jar:3.16.0]
+	at org.apache.camel.http.common.CamelServlet.doExecute(CamelServlet.java:274) ~[camel-http-common-3.16.0.jar:3.16.0]
+	at org.apache.camel.http.common.CamelServlet.doService(CamelServlet.java:214) ~[camel-http-common-3.16.0.jar:3.16.0]
+	at org.apache.camel.http.common.CamelServlet.service(CamelServlet.java:130) ~[camel-http-common-3.16.0.jar:3.16.0]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:584) ~[jakarta.servlet-api-4.0.4.jar:4.0.4]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96) ~[spring-boot-actuator-2.6.4.jar:2.6.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:117) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.SendErrorPageHandler.handleRequest(SendErrorPageHandler.java:52) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:275) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:79) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:134) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:131) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:255) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:79) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:100) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:387) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:852) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1280) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2022-05-11 20:55:49.071 ERROR 4560 --- [  XNIO-1 task-1] io.undertow.request                      : UT005022: Exception generating error page /error
+
+org.springframework.web.util.NestedServletException: Handler dispatch failed; nested exception is java.lang.NoClassDefFoundError: Could not initialize class org.xnio.channels.Channels
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1082) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:517) ~[jakarta.servlet-api-4.0.4.jar:4.0.4]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:584) ~[jakarta.servlet-api-4.0.4.jar:4.0.4]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.16.jar:5.3.16]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.16.jar:5.3.16]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:257) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchToPath(ServletInitialHandler.java:182) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:504) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:425) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:314) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:79) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:134) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:131) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:255) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:79) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:100) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:387) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:852) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1280) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.xnio.channels.Channels
+	at io.undertow.servlet.spec.ServletOutputStreamImpl.flushInternal(ServletOutputStreamImpl.java:504) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.ServletOutputStreamImpl.flush(ServletOutputStreamImpl.java:478) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at java.base/java.io.FilterOutputStream.flush(FilterOutputStream.java:153) ~[na:na]
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1187) ~[jackson-core-2.13.1.jar:2.13.1]
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1009) ~[jackson-databind-2.13.1.jar:2.13.1]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:456) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:290) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:135) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	... 46 common frames omitted
+
+2022-05-11 20:55:49.074 ERROR 4560 --- [  XNIO-1 task-1] io.undertow.request                      : UT005071: Undertow request failed HttpServerExchange{ POST /error}
+
+java.lang.NoClassDefFoundError: Could not initialize class org.xnio.channels.Channels
+	at io.undertow.servlet.spec.ServletOutputStreamImpl.close(ServletOutputStreamImpl.java:628) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.HttpServletResponseImpl.closeStreamAndWriter(HttpServletResponseImpl.java:498) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.HttpServletResponseImpl.responseDone(HttpServletResponseImpl.java:587) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:334) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:79) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:134) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:131) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:255) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:79) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:100) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:387) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:852) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1280) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2022-05-11 20:55:49.075 ERROR 4560 --- [  XNIO-1 task-1] io.undertow.request.io                   : UT005090: Unexpected failure
+
+java.lang.NoClassDefFoundError: Could not initialize class org.xnio.channels.Channels
+	at io.undertow.servlet.spec.ServletInputStreamImpl.readIntoBuffer(ServletInputStreamImpl.java:201) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.ServletInputStreamImpl.close(ServletInputStreamImpl.java:266) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.spec.HttpServletRequestImpl.closeAndDrainRequest(HttpServletRequestImpl.java:707) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.servlet.core.ServletBlockingHttpExchange.close(ServletBlockingHttpExchange.java:89) ~[undertow-servlet-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1700) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:427) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:852) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1280) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2022-05-11 20:55:49.076 ERROR 4560 --- [  XNIO-1 task-1] io.undertow.request.io                   : UT005090: Unexpected failure
+
+java.lang.NoClassDefFoundError: Could not initialize class org.xnio.channels.Channels
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1722) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.AbstractServerConnection$CloseSetter.handleEvent(AbstractServerConnection.java:316) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.AbstractServerConnection$CloseSetter.handleEvent(AbstractServerConnection.java:296) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at org.xnio.StreamConnection.invokeCloseListener(StreamConnection.java:130) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at org.xnio.Connection.close(Connection.java:142) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at io.undertow.server.AbstractServerConnection.close(AbstractServerConnection.java:159) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at org.xnio.IoUtils.safeClose(IoUtils.java:152) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1706) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:427) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:852) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1280) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2022-05-11 20:55:49.077 ERROR 4560 --- [  XNIO-1 task-1] io.undertow.request.io                   : UT005090: Unexpected failure
+
+java.lang.NoClassDefFoundError: Could not initialize class org.xnio.channels.Channels
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1722) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:427) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:852) ~[undertow-core-2.2.16.Final.jar:2.2.16.Final]
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449) ~[jboss-threads-3.1.0.Final.jar:3.1.0.Final]
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1280) ~[xnio-api-3.8.6.Final.jar:3.8.6.Final]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
